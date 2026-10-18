@@ -1,26 +1,29 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CanvasGroup))]
-public class CanvasGroupStartSettings : MonoBehaviour
+namespace FoxTools.Components
 {
-    public bool interactable = false;
-    public bool blocksRaycast = false;
-    [Range(0f, 1f)] public float alpha = 0f;
-    public CanvasGroup group;
-
-    private void Start()
+    [RequireComponent(typeof(CanvasGroup))]
+    public class CanvasGroupStartSettings : MonoBehaviour
     {
-        if(group == null) group = GetComponent<CanvasGroup>();
+        public bool interactable = false;
+        public bool blocksRaycast = false;
+        [Range(0f, 1f)] public float alpha = 0f;
+        public CanvasGroup group;
 
-        if(group == null) return;
+        private void Start()
+        {
+            if (group == null) group = GetComponent<CanvasGroup>();
 
-        group.interactable = interactable;
-        group.blocksRaycasts = blocksRaycast;
-        group.alpha = alpha;
-    }
+            if (group == null) return;
 
-    private void OnValidate()
-    {
-        if (group == null) group = GetComponent<CanvasGroup>();
+            group.interactable = interactable;
+            group.blocksRaycasts = blocksRaycast;
+            group.alpha = alpha;
+        }
+
+        private void OnValidate()
+        {
+            if (group == null) group = GetComponent<CanvasGroup>();
+        }
     }
 }

@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class TemporaryActivation : MonoBehaviour
+namespace FoxTools.Components
 {
-    public void Activate(float seconds)
+    public class TemporaryActivation : MonoBehaviour
     {
-        gameObject.SetActive(true);
-        Invoke("Deactivate", seconds);
-    }
+        public void Activate(float seconds)
+        {
+            gameObject.SetActive(true);
+            Invoke("Deactivate", seconds);
+        }
 
-    public void Deactivate()
-    {
-        gameObject.SetActive(false);
+        public void Deactivate()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

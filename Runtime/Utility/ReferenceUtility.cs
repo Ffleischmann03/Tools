@@ -1,22 +1,24 @@
 using UnityEngine;
 
-public static class ReferenceUtility
+namespace FoxTools.Utility
 {
-    public static T Ensure<T>(T reference, Object context = null)
-        where T : MonoBehaviour
+    public static class ReferenceUtility
     {
-        if (reference == null)
-            reference = Object.FindFirstObjectByType<T>();
-
-        if (reference == null)
+        public static T Ensure<T>(T reference, Object context = null)
+            where T : MonoBehaviour
         {
-            Debug.LogError(
-                $"{typeof(T).Name} could not find a reference.",
-                context
-            );
-        }
+            if (reference == null)
+                reference = Object.FindFirstObjectByType<T>();
 
-        return reference;
+            if (reference == null)
+            {
+                Debug.LogError(
+                    $"{typeof(T).Name} could not find a reference.",
+                    context
+                );
+            }
+
+            return reference;
+        }
     }
 }
-

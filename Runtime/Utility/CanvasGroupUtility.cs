@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public static class CanvasGroupUtility
+namespace FoxTools.Utility
 {
-    public static void SetActive(CanvasGroup group, bool active, bool IgnoreParentOverride = false)
+    public static class CanvasGroupUtility
     {
-        group.alpha = active ? 1f : 0f;
-        group.interactable = active;
-        group.blocksRaycasts = active;
-        group.ignoreParentGroups = IgnoreParentOverride;
-    }
+        public static void SetActive(CanvasGroup group, bool active, bool IgnoreParentOverride = false)
+        {
+            group.alpha = active ? 1f : 0f;
+            group.interactable = active;
+            group.blocksRaycasts = active;
+            group.ignoreParentGroups = IgnoreParentOverride;
+        }
 
-    public static void SetActive(CanvasGroup group, float alpha, bool interactable, bool blocksRaycasts, bool ignoreParentGroups = false)
-    {
-        group.alpha = alpha;
-        group.interactable = interactable;
-        group.blocksRaycasts = blocksRaycasts;
-        group.ignoreParentGroups = ignoreParentGroups;
+        public static void SetActive(CanvasGroup group, float alpha, bool interactable, bool blocksRaycasts, bool ignoreParentGroups = false)
+        {
+            group.alpha = alpha;
+            group.interactable = interactable;
+            group.blocksRaycasts = blocksRaycasts;
+            group.ignoreParentGroups = ignoreParentGroups;
+        }
     }
 }

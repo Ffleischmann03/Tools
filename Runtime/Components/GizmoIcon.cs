@@ -1,10 +1,12 @@
 using UnityEngine;
 
-public class GizmoIcon : MonoBehaviour
+namespace FoxTools.Components
 {
-    public string iconName = "crosshair";
-    public Color tint = Color.white;
-    public bool allowScaling = false;
+    public class GizmoIcon : MonoBehaviour
+    {
+        public string iconName = "crosshair";
+        public Color tint = Color.white;
+        public bool allowScaling = false;
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()
@@ -13,4 +15,5 @@ public class GizmoIcon : MonoBehaviour
     }
 
 #endif
+    }
 }
