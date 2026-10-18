@@ -1,0 +1,9 @@
+{
+  "name": "Fox.Tools.Editor",
+  "references": [
+    "Fox.Tools"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}
